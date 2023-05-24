@@ -75,7 +75,7 @@ exports.findOne = (req, res) => {
         }
     })
         .then(data => {
-            res.send(data)
+            res.send(data);
         })
         .catch(err => {
             res.status(500).send({
@@ -195,7 +195,7 @@ exports.findProfileName = (req, res) => {
         replacements: [req.params.nama]
     })
         .then(data => {
-            req.send(data)
+            res.send(data);
         })
         .catch(err => {
             res.status(500).send({
@@ -210,7 +210,7 @@ exports.findProfileId = (req, res) => {
         replacements: [req.params.nama]
     })
         .then(data => {
-            res.send(data)
+            res.send(data);
         })
         .catch(err => {
             res.status(500).send({
