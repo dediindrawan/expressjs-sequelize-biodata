@@ -164,23 +164,24 @@ exports.patch = (req, res) => {
         }
     })
         .then(data => {
-            if (!req.body.nama) {
+            if (req.body.nama) {
                 data.nama = req.body.nama;
             };
 
-            if (!req.body.tempat_lahir) {
+            if (req.body.tempat_lahir) {
                 data.tempat_lahir = req.body.tempat_lahir;
             };
 
-            if (!req.body.tanggal_lahir) {
+            if (req.body.tanggal_lahir) {
                 data.tanggal_lahir = req.body.tanggal_lahir;
             };
 
-            if (!req.body.alamat) {
+            if (req.body.alamat) {
                 data.alamat = req.body.alamat;
             };
 
             data.save();
+            res.send(data);
         })
         .catch(err => {
             res.status(500).send({
